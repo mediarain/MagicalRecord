@@ -191,6 +191,9 @@ void replaceSelectorForTargetWithSourceImpAndSwizzle(Class originalClass, SEL or
 
 + (BOOL) isICloudEnabled;
 {
+    // added to circumvent iCloud stuff we aren't using.
+    return NO;
+    
     NSURL *cloudURL = [NSPersistentStore MR_cloudURLForUbiqutiousContainer:nil];
     return cloudURL != nil;
 }
